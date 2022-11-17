@@ -12,6 +12,18 @@ vector<vector<ll>> buildGraph(ll size, ll edges){
     return graph;
 }
 
+vector<vector<pair<ll,ll>>> buildWeightedGraph(ll size, ll edges){
+    vector<vector<pair<ll,ll>>> graph(size + 1);
+    for (ll i = 0; i < edges; i++)
+    {
+        ll a, b, c;
+        cin >> a >> b >>c;
+        graph[a].push_back({b, c});
+        graph[b].push_back({a,c});
+    }
+    return graph;
+}
+
 //disjoint set union
 class DSU
 {
