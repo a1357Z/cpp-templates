@@ -104,3 +104,14 @@ struct union_find {
         return true;
     }
 };
+
+
+//dfs on a graph
+ll dfs(ll node, vector<vector<ll>> &graph, vector<ll> &visited){
+    visited[node] = 1;
+    for(ll n: graph[node]){
+        if(visited[n] == 0){
+            dfs(n, graph, visited);
+        }
+    }
+}
