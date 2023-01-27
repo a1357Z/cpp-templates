@@ -1,11 +1,11 @@
-//returns the ceiling of a/b
-
-int cust_ceil(int a, int b){
+//returns the round_up of a/b
+int round_up(int a, int b){
     if(a%b == 0)return a/b;
     return (a/b) + 1;
 }
 
-int cust_ceil(int a, int b){
+// round up a/b; th
+int round_up(int a, int b){
     return (a + b - 1)/b;
 }
 
@@ -37,3 +37,10 @@ if(left > right){
     found = true;
     break;
 }
+
+//possible error causes when using long long
+ll total = accumulate(items.begin(), items.end(), 0); // this will fail for larger values
+ll total = accumulate(items.begin(), items.end(), (ll)0); // use this instead
+
+// vector.size() is a integer, any operation of it with a long might through error, use typecasting
+(ll)vector.size() // --> use this syntax
