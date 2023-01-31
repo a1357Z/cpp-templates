@@ -44,3 +44,26 @@ ll total = accumulate(items.begin(), items.end(), (ll)0); // use this instead
 
 // vector.size() is a integer, any operation of it with a long might through error, use typecasting
 (ll)vector.size() // --> use this syntax
+
+// prime factorization of a number
+// returns a map of power --> [bases]
+map<ll,vector<ll>> primeFactorization(ll num){
+    map<ll, vector<ll>>pow2bases;
+    ll numCopy = num;
+    for(ll i=2; i*i <= numCopy; i++){
+        ll count = 0;
+        if(num%i != 0)continue;
+        while(num%i == 0){
+            num/=i;
+            count++;
+        }
+
+        pow2bases[count].push_back(i);
+    }
+
+    if(num != 1){
+        pow2bases[1].push_back(num);
+    }
+
+    return pow2bases;
+}
