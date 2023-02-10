@@ -67,3 +67,22 @@ map<ll,vector<ll>> primeFactorization(ll num){
 
     return pow2bases;
 }
+
+//remove leading zeros from a number in string notation
+string remove_leading_zeros(string s){
+    string answer = "";
+    int idx=0;
+
+    //get the most significant bit
+    while(idx<s.length() && s[idx] == '0'){
+        idx++;
+    }
+
+    while(idx<s.length()){
+        answer += s[idx++];
+    }
+    if(answer.length() > 0)
+        return answer;
+    
+    return "0";
+}
