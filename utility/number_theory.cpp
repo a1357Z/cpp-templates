@@ -86,3 +86,11 @@ string remove_leading_zeros(string s){
     
     return "0";
 }
+
+// where x is the previous lcm and y is the new number added to the list of numbers for which we need lcm
+ll get_lcm(ll x, ll y) {
+  ll g = __gcd(x, y);
+  x /= g;
+  if (x >= 1e18 / y) return 1e18;
+  return x * y;
+}
